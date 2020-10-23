@@ -1,0 +1,41 @@
+[System]
+Name='ajuste3g'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=2
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='iteration'
+Range=[0 1]
+NumMFs=3
+MF1='Low':'gaussmf',[0.1593 0.02083]
+MF2='Medium':'gaussmf',[0.1769 0.5]
+MF3='High':'gaussmf',[0.1769 1]
+
+[Output1]
+Name='c1'
+Range=[3 6]
+NumMFs=3
+MF1='Low':'gaussmf',[0.4783 3.063]
+MF2='Medium':'gaussmf',[0.5315 4.5]
+MF3='High':'gaussmf',[0.5322 6]
+
+[Output2]
+Name='c2'
+Range=[3 6]
+NumMFs=3
+MF1='Low':'gaussmf',[0.5308 3]
+MF2='Medium':'gaussmf',[0.5308 4.492]
+MF3='High':'gaussmf',[0.4119 5.933]
+
+[Rules]
+1, 1 3 (1) : 1
+2, 2 2 (1) : 1
+3, 3 1 (1) : 1
